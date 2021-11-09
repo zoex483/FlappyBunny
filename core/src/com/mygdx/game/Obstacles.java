@@ -51,6 +51,7 @@ public class Obstacles {
         for (int i = 0; i < obs.length; i++) {
             batch.draw(txt, obs[1].position.x, obs[i].position.y );
             batch.draw(txt, obs[1].position.x, obs[i].position.y + betweenDistance + txt.getHeight() - obs [i].offset);
+
         }
     }
 
