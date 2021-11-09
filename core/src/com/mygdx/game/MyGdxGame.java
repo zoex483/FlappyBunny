@@ -6,14 +6,11 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.utils.ScreenUtils;
-
-import java.awt.*;
 
 public class MyGdxGame extends ApplicationAdapter {
 	SpriteBatch batch;
 	Background bg;
-	Cat cat;
+	Bunny bunny;
 	Obstacles obstacles;
 	boolean gameOver;
 	Texture restartTexture;
@@ -24,7 +21,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	public void create () {
 		batch = new SpriteBatch();
 		bg = new Background();
-		cat = new Cat();
+		bunny = new Bunny();
 		obstacles = new Obstacles();
 		gameOver = false;
 		restartTexture = new Texture("gameover.png");
@@ -40,7 +37,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		bg.render(batch);
 		obstacles.render(batch);
 		if(!gameOver) {
-			cat.render(batch);
+			bunny.render(batch);
 		}else{
 			batch.draw(restartTexture, 220, 280);
 		}
@@ -49,16 +46,16 @@ public class MyGdxGame extends ApplicationAdapter {
 
 	public void update(){
 		bg.update();
-		cat.update();
+		bunny.update();
 		obstacles.update();
 		for (int i = 0; i < Obstacles.obs.length; i++) {
-			if(cat.position.x > Obstacles.obs[i].position.x && cat.position.x < Obstacles.obs[i].position.x+50){
-				if(!Obstacles.obs[i].emptySpace.contains(cat.position)){
+			if(bunny.position.x > Obstacles.obs[i].position.x && bunny.position.x < Obstacles.obs[i].position.x+50){
+				if(!Obstacles.obs[i].emptySpace.contains(bunny.position)){
 					gameOver = true;
 				}
 			}
 		}
-		if(cat.position.y <0 || cat.position.y > 600){
+		if(bunny.position.y <0 || bunny.position.y > 600){
 			gameOver = true;
 		}
 		if(Gdx.input.isKeyPressed(Input.Keys.SPACE) && gameOver){
@@ -74,7 +71,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	}
 
 	public void recreate(){
-		cat.recreate();
+		bunny.recreate();
 		obstacles.recreate();
 		gameOver = false;
 	}

@@ -6,14 +6,14 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 
-public class Cat {
+public class Bunny {
     Texture img;
     Vector2 position;
     float vy;
     float gravity;
 
 
-    public Cat(){
+    public Bunny(){
         img = new Texture("cat.png");
         position = new Vector2(100,380);
         vy = 0;
