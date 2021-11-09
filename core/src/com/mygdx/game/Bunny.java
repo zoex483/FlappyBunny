@@ -14,7 +14,7 @@ public class Bunny {
 
 
     public Bunny(){
-        img = new Texture("cat.png");
+        img = new Texture("bunny.png");
         position = new Vector2(100,380);
         vy = 0;
         gravity = - 0.7f;
