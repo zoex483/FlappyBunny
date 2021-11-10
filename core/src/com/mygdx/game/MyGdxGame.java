@@ -14,9 +14,6 @@ public class MyGdxGame extends ApplicationAdapter {
 	Obstacles obstacles;
 	boolean gameOver;
 	Texture restartTexture;
-	int score = 0;
-
-
 
 	@Override
 	public void create () {
@@ -49,7 +46,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		bg.update();
 		bunny.update();
 		obstacles.update();
-		String yourScore = null;
+		String yourScore = "";
 		Gdx.graphics.setTitle(""+yourScore);
 
 
