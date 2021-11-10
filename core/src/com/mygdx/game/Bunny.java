@@ -27,7 +27,7 @@ public class Bunny {
     public void update(){
 
         if (Gdx.input.isKeyPressed(Input.Keys.SPACE)){
-            vy = 10;
+            vy = 4;
         }
         vy += gravity;
         position.y += vy;

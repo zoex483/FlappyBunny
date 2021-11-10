@@ -14,6 +14,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	Obstacles obstacles;
 	boolean gameOver;
 	Texture restartTexture;
+	int score = 0;
 
 
 
@@ -48,6 +49,10 @@ public class MyGdxGame extends ApplicationAdapter {
 		bg.update();
 		bunny.update();
 		obstacles.update();
+		String yourScore = null;
+		Gdx.graphics.setTitle(""+yourScore);
+
+
 		for (int i = 0; i < Obstacles.obs.length; i++) {
 			if(bunny.position.x > Obstacles.obs[i].position.x && bunny.position.x < Obstacles.obs[i].position.x+50){
 				if(!Obstacles.obs[i].emptySpace.contains(bunny.position)){
@@ -61,7 +66,6 @@ public class MyGdxGame extends ApplicationAdapter {
 		if(Gdx.input.isKeyPressed(Input.Keys.SPACE) && gameOver){
 			recreate();
 		}
-
 
 	}
 
