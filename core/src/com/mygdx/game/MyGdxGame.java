@@ -15,6 +15,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	boolean gameOver;
 	Texture restartTexture;
 
+
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
@@ -46,8 +47,9 @@ public class MyGdxGame extends ApplicationAdapter {
 		bg.update();
 		bunny.update();
 		obstacles.update();
-		String yourScore = "";
-		Gdx.graphics.setTitle(""+yourScore);
+
+
+
 
 
 		for (int i = 0; i < Obstacles.obs.length; i++) {
